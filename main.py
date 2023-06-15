@@ -1,24 +1,25 @@
-list=[1,2,3,3,4,5,65,76]
+list=[1, 2, 3, 3, 4, 5, 65, 76]
+
 def add():
     new=int(input("what you want to add: "))
     list.append(new)
+
 def update():
-    j=0
-    for i in list:
-        j+=1
-        print (f"{i} - {j}")
     choice= int(input("choose number of element you want to change "))
-    change= int(input("write new number: "))
-    list[choice-1]=change
-    print(list)
+    if choice in list:
+        change= int(input("write new number: "))
+        indexElement = list.index(choice)
+        list[indexElement] = change
+        print(list)
+
+
 def delete():
-    j=0
-    for i in list:
-        j+=1
-        print (f"{i} - {j}")
-    choice= int(input("choose the number you want to delete "))
-    list.remove(list[choice-1])
-    print(list)
+    choice = int(input("choose the number you want to delete "))
+    if choice in list:
+        list.remove(choice)
+        print(list)
+
+
 def main():
     while True:
         selection=int(input("if you want to add write - 1\n" +
